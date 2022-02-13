@@ -136,8 +136,8 @@ $product = $block->getProduct()
 				 }
 				 if (isset($dataImage)){
 					if(class_exists('Mage')){
-						$imageDesktop = \Mage::imageResizeUrl($dataImage, 700, 700, 'p', 85, 'media/');
-						$imageMobile = \Mage::imageResizeUrl($dataImage, 450, 450, 'p', 85, 'media/');
+						$imageDesktop = \Mage::imageResizeUrl($dataImage, 700, 700, 'p', 85);
+						$imageMobile = \Mage::imageResizeUrl($dataImage, 350, 350, 'p', 85);
 					} else {
 						$imageDesktop = $dataImage;
 						$imageMobile = $dataImage;
