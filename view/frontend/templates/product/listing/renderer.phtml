@@ -23,7 +23,7 @@ $product = $block->getProduct()
 	  $aditionalSwatchImages = [];
 	  foreach ($products as $product) {
 		   	//ToDo: use smaller image 
-			$aditionalSwatchImages[$p->getId()] = '/media/catalog/product/' . $product->getData('small_image');
+			$aditionalSwatchImages[$product->getId()] = '/media/catalog/product/' . $product->getData('small_image');
 	  }
 	  //var_dump($aditionalSwatchImages);
     ?>
