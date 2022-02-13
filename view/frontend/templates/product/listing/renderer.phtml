@@ -19,10 +19,11 @@ $product = $block->getProduct()
 	  $jsonSwatchConfig = $block->getJsonSwatchConfig();
 	  $jsonConfig = $block->getJsonConfig();
 	  $products = $block->getAllowProducts();
+
 	  $aditionalSwatchImages = [];
-	   foreach ($products as $p) {
-		   //ToDo: use smaller image 
-		$aditionalSwatchImages[$p->getId()] = '/media/catalog/product/' . $p->getData('small_image');
+	  foreach ($products as $product) {
+		   	//ToDo: use smaller image 
+			$aditionalSwatchImages[$p->getId()] = '/media/catalog/product/' . $p->getData('small_image');
 	  }
 	  //var_dump($aditionalSwatchImages);
     ?>
