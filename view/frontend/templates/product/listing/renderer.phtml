@@ -125,7 +125,7 @@ $product = $block->getProduct()
 			     data-opt-id="<?= $option['id'] ?>" 
 			     data-opt-label="<?= $option['label'] ?>" 
 			     aria-label="<?= $option['label'] ?>" role="option" 
-				 data-parent="<?= $product->getId() ?>"
+				 data-parent="<?= $productId ?>"
 				 <?php $productImage = $option['products'][0]; ?>
 				 data-product="<?=  $productImage  ?>"
 				 <?php //var_dump( $option); 
@@ -137,7 +137,7 @@ $product = $block->getProduct()
 				 }
 				 if (isset($dataImage)){
 					if(class_exists('Mage')){
-						$imageDesktop = \Mage::imageResizeUrl($dataImage, 700, 700, 'p', 85);
+						$imageDesktop = \Mage::imageResizeUrl($dataImage, 700, 700, 'p', 85); 
 						$imageMobile = \Mage::imageResizeUrl($dataImage, 350, 350, 'p', 85);
 					} else {
 						$imageDesktop = $dataImage;
@@ -175,13 +175,15 @@ $product = $block->getProduct()
 		}
 		const image = 	e.target.getAttribute('data-image');
 		const parentID = e.target.getAttribute('data-parent');
+		console.log(parentID);
 		if (image) { 
 		const selectorImgP = ".gallery-placeholder._block-content-loading .gallery-placeholder__image";
 		const selectorImgProdResponsive = ".gallery-placeholder._block-content-loading source";
 		const selectorImgC = '#product-item-info_' + parentID + ' img.product-image-photo';
-		//console.log(image);
+		console.log(selectorImgC);
 		const imgProductPageP = document.querySelector(selectorImgP);
 		const imgProductPageC = document.querySelector(selectorImgC);
+		console.log(imgProductPageC);
 		if(imgProductPageP){
 			const imgProductPageProductSource = document.querySelectorAll(selectorImgProdResponsive);
 			imgProductPageProductSource.forEach((source) => source.srcset = image);
