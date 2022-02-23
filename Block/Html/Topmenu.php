@@ -20,7 +20,7 @@ use Magento\Framework\View\Element\Template;
  * @api
  * @since 100.0.2
  */
-class Topmenu extends Template implements IdentityInterface
+class Topmenu extends \Magento\Theme\Block\Html\Topmenu implements IdentityInterface
 {
     /**
      * Cache identities
@@ -58,7 +58,7 @@ class Topmenu extends Template implements IdentityInterface
         TreeFactory $treeFactory,
         array $data = []
     ) {
-        parent::__construct($context, $data);
+        parent::__construct($context, $nodeFactory, $treeFactory, $data);
         $this->nodeFactory = $nodeFactory;
         $this->treeFactory = $treeFactory;
     }
